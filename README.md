@@ -31,7 +31,8 @@ make proto
 🛠 Переменные окружения
 Переменная Описание
 GRPC_PORT Порт gRPC сервера
-Network Тип сети (tcp)
+HTTP_PORT Порт http сервера
+NETWORK Тип сети (tcp)
 
 📦 Структура проекта
 server/main.go
