@@ -23,7 +23,7 @@ Network=tcp
 1. Установить зависимости
    go mod tidy
 2. Запустить сервер
-   go run server/main.go
+   go run cmd/server/main.go или make run
 
 🧪 Генерация gRPC кода
 make proto

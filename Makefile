@@ -2,7 +2,7 @@
 BINARY=server
 
 # пути
-CMD_DIR=server
+CMD_DIR=cmd/server
 PROTO_DIR=proto
 OUT_DIR=.
 
@@ -16,6 +16,7 @@ proto:
 	protoc \
 	--go_out=$(OUT_DIR) \
 	--go-grpc_out=$(OUT_DIR) \
+	--grpc-gateway_out= \
 	$(PROTO_DIR)/*.proto
 
 # установить зависимости

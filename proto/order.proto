@@ -2,15 +2,41 @@ syntax = "proto3";
 
 option go_package = "pkg/api/test";
 
+import "google/api/annotations.proto";
 
 package api;
 
 service OrderService {
-  rpc CreateOrder(CreateOrderRequest) returns (CreateOrderResponse);
-  rpc GetOrder(GetOrderRequest) returns (GetOrderResponse);
-  rpc UpdateOrder(UpdateOrderRequest) returns (UpdateOrderResponse);
-  rpc DeleteOrder(DeleteOrderRequest) returns (DeleteOrderResponse);
-  rpc ListOrders(ListOrdersRequest) returns (ListOrdersResponse);
+  rpc CreateOrder(CreateOrderRequest) returns (CreateOrderResponse) {
+    option (google.api.http) = {
+      post: "/v1/orders/order_service"
+      body: "*"
+    };
+  };;
+  rpc GetOrder(GetOrderRequest) returns (GetOrderResponse){
+    option (google.api.http) = {
+      post: "/v1/orders/get_order"
+      body: "*"
+    };
+  };;
+  rpc UpdateOrder(UpdateOrderRequest) returns (UpdateOrderResponse){
+    option (google.api.http) = {
+      post: "/v1/orders/update_order"
+      body: "*"
+    };
+  };;
+  rpc DeleteOrder(DeleteOrderRequest) returns (DeleteOrderResponse){
+    option (google.api.http) = {
+      post: "/v1/orders/delete_order"
+      body: "*"
+    };
+  };;
+  rpc ListOrders(ListOrdersRequest) returns (ListOrdersResponse){
+    option (google.api.http) = {
+      post: "/v1/orders/list_orders"
+      body: "*"
+    };
+  };;
 }
 
 message Order {
